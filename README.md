@@ -30,7 +30,7 @@ python server.py
 
 ## How to use application
 
-One of advantages of FastAPI over Flask is its auto OpenAPI doc generation, so you can easily see all endpoints and their description and usage at a glance. Our app's swagger doc is located at :
+One of advantages of FastAPI over Flask is its auto OpenAPI doc generation, so you can easily see all endpoints and their description and usage at a glance. Our app's swaggerUI is located at :
 
 http://localhost:8005/docs
 
