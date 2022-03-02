@@ -1,9 +1,7 @@
 from server import app
 from unittest import TestCase
-from fastapi import FastAPI
 from fastapi.testclient import TestClient
 import json
-import sys
 from server import app
 
 def parse_response(response):
