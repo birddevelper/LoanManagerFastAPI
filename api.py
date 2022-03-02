@@ -43,7 +43,8 @@ async def initiate_loan( input_loan : InputLoan):
     summary="Add payment to existing loan",
     status_code=201,
     responses={ 201: {"model": SuccessfulMessage, "description": "Payment added successfully"},
-                404: {"model": ErrorMessage, "description": "Loan is not initiated"}})
+                404: {"model": ErrorMessage, "description": "Loan is not initiated"},
+                400: {"model": ErrorMessage, "description": "Invalid input parmaters"}})
 async def add_payment( payment : InputPayment):
 
      # retrieve existing loan   
@@ -68,7 +69,8 @@ async def add_payment( payment : InputPayment):
     summary="get the balance of loan up to requested date ",
     status_code=200,
     responses={ 200: {"model": SuccessfulMessageWithData, "description": "Balance successfully retrieved"},
-                404: {"model": ErrorMessage, "description": "Loan is not initiated"}})
+                404: {"model": ErrorMessage, "description": "Loan is not initiated"},
+                400: {"model": ErrorMessage, "description": "Invalid input parmaters"}})
 def get_balance(to_date: date = Query(
                 ...,
                 alias="todate",
