@@ -1,3 +1,3 @@
-pip install "fastapi[all]"
-pip install "uvicorn[standard]"
-pip install pydantic
+fastapi[all]
+uvicorn[standard]
+pydantic
