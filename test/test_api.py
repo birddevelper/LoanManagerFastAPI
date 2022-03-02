@@ -22,8 +22,7 @@ class TestApiIntegration(TestCase):
     # test initiate endpoint with invalid parameter
     def test_initiate_loan_invalid_parameters(self) :
        response = parse_response(self.app.post("/loan/initiate",
-                                data=json.dumps(dict(initial_amount=1000, annual_interest_rate = 2.5, start_date ='Two' ))))
-                                
+                                data=json.dumps(dict(initial_amount='1000', annual_interest_rate = 2.5, start_date ='Two' ))))
        self.assertIn('detail', response)
        
 
