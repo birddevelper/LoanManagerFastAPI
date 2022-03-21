@@ -26,8 +26,7 @@ class Loan:
         # initiate loan parameters with given information
         self.initial_amount = initial_amount
         self.annual_interest_rate = annual_interest_rate
-        # convert string date to datetime object, it raises ValueError if date format not match
-        self.start_date = start_date #datetime.strptime(start_date, '%Y-%m-%d')
+        self.start_date = start_date 
         self.payments = []
     
 
