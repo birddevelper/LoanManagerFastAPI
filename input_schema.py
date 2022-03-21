@@ -6,8 +6,8 @@ from pydantic import BaseModel, Field
 
 
 class InputPayment(BaseModel):
-    payment_amount: float
-    payment_date : date
+    payment_amount: float = Field(..., example="1000")
+    payment_date : date = Field(..., example="2022-09-09")
 
 
 class InputLoan(BaseModel):
