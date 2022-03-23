@@ -71,7 +71,7 @@ async def add_payment( payment : InputPayment):
     responses={ 200: {"model": SuccessfulMessageWithData, "description": "Balance successfully retrieved"},
                 404: {"model": ErrorMessage, "description": "Loan is not initiated"},
                 400: {"model": ErrorMessage, "description": "Invalid input parmaters"}})
-def get_balance(to_date: date = Query(
+async def get_balance(to_date: date = Query(
                 ...,
                 alias="todate",
                 title="date of blanace",
