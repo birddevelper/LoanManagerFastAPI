@@ -89,22 +89,22 @@ class Loan:
             total_payment = self.__get_total_payment(payment['payment_date'] - timedelta(days=1))
 
             # calculate principal balance
-            principal_balance = self.initial_amount - total_payment
+            principal_balance = 0 if self.initial_amount - total_payment < 0 else self.initial_amount - total_payment
             # calculate the interest of principal balance of days in the period with same balance
             interest += principal_balance * (self.annual_interest_rate/100/365) * delta.days
-           
+
             base_date = payment['payment_date']
 
         
         total_payment = self.__get_total_payment(to_date)
         # calculate principal balance up to requested date
-        principal_balance = self.initial_amount - total_payment
+        principal_balance = 0 if self.initial_amount - total_payment < 0 else self.initial_amount - total_payment
         # get days difference between last calculated date and requested date
         delta =  to_date - base_date + (timedelta(days=1) if base_date != self.start_date else timedelta(days=0))
         # calculate the interest of principal balance of days in the period with same balance
         interest += principal_balance * (self.annual_interest_rate/100/365) * delta.days
         
-        return principal_balance + interest
+        return self.initial_amount + interest - total_payment
 
 
     # this private method calculates total of all payments to the requested date
