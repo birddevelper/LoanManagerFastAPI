@@ -1,6 +1,6 @@
 # Loan Manager
 
-The loanManager is a tiny application that calculates principal balance interest added to it. It exposes 3 endpoint as following list :
+The loanManager is a tiny web application that calculates principal balance interest added to it. It exposes 3 following endpoint :
 
 - POST /loan/initiate (initiate the loan)
 - POST /loan/addpayment (add payment information)
